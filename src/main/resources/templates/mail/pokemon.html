@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+
+<body style="font-family: Arial; font-size: 14px;">
+
+<p>Olá!</p>
+
+<p>Existem pokemons por aqui!</p>
+
+<p>
+    <table style="width: 100%; border-collapse: collapse;  margin: 20px 0">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>Caracteristica</th>
+                <th>Data de Criação</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr style="border-bottom: 1px solid #ccc; border-top: 1px solid #ccc;"
+                th:each="pokemon: ${pokemons}">
+                <td th:text="${pokemon.name}">Receita</td>
+                <td th:text="${pokemon.type}">João Silva</td>
+                <td th:text="${pokemon.characteristics}">Salário mensal</td>
+                <td th:text="${#temporals.format(pokemon.creationDate, 'dd/MM/yyyy')}" 
+                    style="text-align: center">10/06/2017</td>
+            </tr>
+        </tbody>
+    </table>
+</p>
+<p>Vamos pegar todos!</p>
+
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+
+<body style="font-family: Arial; font-size: 14px;">
+
+<p>Olá!</p>
+
+<p>Existem pokemons por aqui!</p>
+
+<p>
+    <table style="width: 100%; border-collapse: collapse;  margin: 20px 0">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>Caracteristica</th>
+                <th>Data de Criação</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr style="border-bottom: 1px solid #ccc; border-top: 1px solid #ccc;"
+                th:each="lancamento: ${lancamentos}"
+                th:styleappend="${lancamento.receita} ? 'color: blue;' : 'color:red;'">
+                <td th:text="${lancamento.tipo}">Receita</td>
+                <td th:text="${lancamento.pessoa.nome}">João Silva</td>
+                <td th:text="${lancamento.descricao}">Salário mensal</td>
+                <td th:text="${#temporals.format(lancamento.dataVencimento, 'dd/MM/yyyy')}" 
+                    style="text-align: center">10/06/2017</td>
+                <td th:text="${#numbers.formatDecimal(lancamento.valor, 0, 'POINT', 2, 'COMMA')}" 
+                    style="text-align: right">R$ 10.000,00</td>
+            </tr>
+        </tbody>
+    </table>
+</p>
+
+<p>Obrigado.</p>
+<p>Equipe Algamoney!</p>
+
+</body>
+</html> -->

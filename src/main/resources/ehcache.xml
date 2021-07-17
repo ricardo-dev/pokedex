@@ -1,0 +1,17 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ehcache.xsd">
+	
+	<!-- 
+		Habilitar no .java principal @EnableCaching
+		chamada do arquivo ServiceImpl 
+		-> consulta = @Cacheable("cache_consulta_1")
+		-> atualizando @CachePut("cache_consulta_1")
+		maxEntriesLocalHeap="200" numero maximo de elementos na cache
+		timeToLiveSeconds="3600"  tempo em segundos para expirar a cache
+	 -->
+	<cache name="cache_consulta_1"
+		   maxEntriesLocalHeap="200"
+		   timeToLiveSeconds="3600">
+	
+	</cache>
+</ehcache>
