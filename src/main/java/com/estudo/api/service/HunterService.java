@@ -4,6 +4,7 @@ package com.estudo.api.service;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;
+import java.util.TimeZone;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -187,6 +188,20 @@ public class HunterService {
         String stringDate= DateFor.format(date);
         System.out.println(stringDate);
 	}
+	
+	public void formatUTCTZ(Date d) {
+		TimeZone.setDefault(TimeZone.getTimeZone("America/Sao_Paulo"));
+		System.out.println(d.getTime() + "=" + d);
+		TimeZone.setDefault(TimeZone.getTimeZone("America/Los_Angeles"));
+		System.out.println(d.getTime() + "=" + d);
+		TimeZone.setDefault(TimeZone.getTimeZone("Asia/Tokyo"));
+		System.out.println(d.getTime() + "=" + d);
+		TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+		System.out.println(d.getTime() + "=" + d);
+	}
+	
+	public static final long HOUR = 3600*1000; // in milli-seconds.
+	pedido.setEntrega( new Date(pedido.getEntrega().getTime() + 3 * HOUR));
  */
 
 /*
