@@ -118,6 +118,39 @@ public class HunterService {
  */
 
 /*
+ * preparedStatment
+ * 
+ 	import java.sql.PreparedStatement;
+	import java.sql.ResultSet;
+	import java.sql.SQLException;
+	
+	public boolean inserir(Usuario usuario) {
+        String sql = "INSERT INTO usuario(login,senha,perfil,email) VALUES(?,?,?,?)";
+        Boolean retorno = false;
+        PreparedStatement pst = Conexao.getPreparedStatement(sql);
+        try {
+            pst.setString(1, usuario.getLogin());
+            pst.setString(2, usuario.getSenha());
+            pst.setString(3, usuario.getPerfil());
+            pst.setString(4, usuario.getEmail());
+            
+            if(pst.executeUpdate()>0)
+            {
+                retorno = true;
+            }
+                
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            retorno = false;
+        }
+        return retorno;
+    }
+ * 
+ */
+
+/*
  * @PersistenceContext
 	public EntityManager manager;
 	
