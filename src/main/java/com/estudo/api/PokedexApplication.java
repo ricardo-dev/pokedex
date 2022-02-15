@@ -108,5 +108,4 @@ public class PokedexApplication extends SpringBootServletInitializer { // tomcat
 		this.pokemonRepository.save(p6);
 		this.pokemonRepository.save(p7);
 	}
-	
 }
