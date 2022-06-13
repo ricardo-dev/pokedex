@@ -87,6 +87,22 @@ public class HunterService {
 }
 
 /*
+@Controller vs @RestController
+
+Api´s rest deve ser serializada antes de ser enviada ao cliente
+
+@Controller
+Não necessariamente serializa os dados antes de enviar, podendo ser possível
+por exemplo, enviar um template HTML com os dados - no caso para sinalizar
+que o retorno deve ser serializado, acrescentar no método a anotação
+@ResponseBody
+
+@RestController - especialização de @Controller
+A anotação já identifica todos os métodos para serializar os dados, não
+precisando anotar @ResponseBody
+*/
+
+/*
  * Utilizar Set para remover itens duplicados
  * public List<Camera> removeDuplicate(List<Camera> list){
 		System.out.println("Antes de remover");
